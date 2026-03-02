@@ -1,0 +1,66 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "zhipuai-coding-plan/glm-4.7",
+  "small_model": "zhipuai-coding-plan/glm-4.5-air",
+    "mcp": {
+        "zai-mcp-server": {
+            "type": "local",
+            "command": [
+                "npx",
+                "-y",
+                "@z_ai/mcp-server"
+            ],
+            "environment": {
+                "Z_AI_MODE": "ZHIPU",
+                "Z_AI_API_KEY": "YOUR_API_KEY_HERE"
+            }
+        },
+        "web-search-prime": {
+            "type": "remote",
+            "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
+            "headers": {
+                "Authorization": "Bearer YOUR_API_KEY_HERE"
+            }
+        },
+        "web-reader": {
+            "type": "remote",
+            "url": "https://open.bigmodel.cn/api/mcp/web_reader/mcp",
+            "headers": {
+                "Authorization": "Bearer YOUR_API_KEY_HERE"
+            }
+        },
+        "zread": {
+            "type": "remote",
+            "url": "https://open.bigmodel.cn/api/mcp/zread/mcp",
+            "headers": {
+                "Authorization": "Bearer YOUR_API_KEY_HERE"
+            }
+        },
+        "arxiv": {
+            "type": "local",
+            "command": [
+                "uv",
+                "tool",
+                "run",
+                "arxiv-mcp-server",
+                "--storage-path",
+                "YOUR_PAPER_STORAGE_PATH"
+            ]
+        },
+        "chrome-devtools": {
+            "type": "local",
+            "command": [
+                "npx",
+                "-y",
+                "chrome-devtools-mcp@latest"
+            ]
+        }
+    },
+    "provider": {
+        "zhipuai-coding-plan": {
+            "options": {
+                "apiKey": "YOUR_API_KEY_HERE"
+            }
+        }
+    }
+}
