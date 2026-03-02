@@ -23,6 +23,10 @@ Reports saved to `daily/{date}.md`, including:
 - Action suggestions
 - Research insights
 
+## Example
+
+![Daily Report Example](assets/example.png)
+
 ## Dependencies
 
 - Chrome MCP (RSS access)
